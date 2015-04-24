@@ -10,7 +10,7 @@ describe('Controller: MainCtrl', function () {
       scope,
       $httpBackend;
 
-  // Initialize the controller and a mock scope
+  //Initialize the controller and a mock scope
   beforeEach(inject(function (_$httpBackend_, $controller, $rootScope) {
     $httpBackend = _$httpBackend_;
     $httpBackend.expectGET('/api/things')
@@ -25,5 +25,9 @@ describe('Controller: MainCtrl', function () {
   it('should attach a list of things to the scope', function () {
     $httpBackend.flush();
     expect(scope.awesomeThings.length).toBe(4);
+  });
+
+  it('should ...', function () {
+    expect(1).toEqual(1);
   });
 });

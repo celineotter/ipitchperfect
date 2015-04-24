@@ -48,7 +48,9 @@
     <!-- build:js(client) app/vendor.js -->
       <!-- bower:js -->
       <script src="bower_components/jquery/dist/jquery.js"></script>
+      <script src="bower_components/ng-file-upload-shim/angular-file-upload-shim.js"></script>
       <script src="bower_components/angular/angular.js"></script>
+      <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
       <script src="bower_components/angular-resource/angular-resource.js"></script>
       <script src="bower_components/angular-cookies/angular-cookies.js"></script>
       <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
@@ -56,22 +58,46 @@
       <script src="bower_components/lodash/dist/lodash.compat.js"></script>
       <script src="bower_components/angular-socket-io/socket.js"></script>
       <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+      <script src="bower_components/ng-file-upload/angular-file-upload.js"></script>
       <!-- endbower -->
     <!-- endbuild -->
+      <script src="//cdn.webrtc-experiment.com/RecordRTC.js"></script>
+      <script src="//cdn.popcornjs.org/code/dist/popcorn-complete.min.js"></script>-
 
         <!-- build:js({.tmp,client}) app/app.js -->
         <script src="app/app.js"></script>
           <!-- injector:js -->
           <script src="app/account/account.js"></script>
+          <script src="app/account/login/index.js"></script>
           <script src="app/account/login/login.controller.js"></script>
           <script src="app/account/settings/settings.controller.js"></script>
+          <script src="app/account/signup/index.js"></script>
           <script src="app/account/signup/signup.controller.js"></script>
           <script src="app/admin/admin.controller.js"></script>
           <script src="app/admin/admin.js"></script>
+          <script src="app/home/home.controller.js"></script>
+          <script src="app/home/home.js"></script>
+          <script src="app/home/home.service.js"></script>
+          <script src="app/interview/interview.controller.js"></script>
+          <script src="app/interview/interview.js"></script>
+          <script src="app/interview/interview.service.js"></script>
+          <script src="app/ip-enter/ip-enter.directive.js"></script>
           <script src="app/main/main.controller.js"></script>
           <script src="app/main/main.js"></script>
+          <script src="app/question/question.controller.js"></script>
+          <script src="app/question/question.js"></script>
+          <script src="app/question/question.service.js"></script>
+          <script src="app/question/response.service.js"></script>
+          <script src="app/review/review.create.controller.js"></script>
+          <script src="app/review/review.js"></script>
+          <script src="app/review/review.service.js"></script>
+          <script src="app/review/review.view.controller.js"></script>
+          <script src="app/share/share.controller.js"></script>
+          <script src="app/share/share.js"></script>
+          <script src="app/share/share.service.js"></script>
           <script src="components/auth/auth.service.js"></script>
           <script src="components/auth/user.service.js"></script>
+          <script src="components/modal/modal.service.js"></script>
           <script src="components/mongoose-error/mongoose-error.directive.js"></script>
           <script src="components/navbar/navbar.controller.js"></script>
           <script src="components/socket/socket.service.js"></script>

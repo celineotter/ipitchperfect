@@ -1,0 +1,115 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div id="interview">
+
+	<div class="container">
+		<div class="row clearfix">
+			<div class="col-sm-12 column">
+
+				<div class="page-header">
+					<h1>{{title}}
+						<div>
+	            <small ng-hide="startInterview && !processInterview"><span>{{description}}</span></small>
+						</div>
+
+					</h1>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row clearfix" ng-show="!startInterview && !instructions">
+			<div class="col-sm-3 column"></div>
+			<div class="col-sm-8 col-md-7 column text-center">
+
+				<!--  View yourself buttons  -->
+					<button id="btnShowPreview" class="btn btn-primary"
+						ng-show="!startInterview && !instructions"
+						ng-click="togglePreview();">Show Prevew</button>
+
+					<button id="btnReturnHome" class="btn btn-info"
+						ng-show="!startInterview && !processInterview && !instructions"
+						ng-click="returnHome();">Return Home</button>
+
+					<button id="btnBeginInterview" class="btn btn-success"
+						ng-show="!startInterview && !processInterview && !instructions"
+						ng-disabled="!enableBeginInterview();"
+						ng-click="showInstructions();">Begin Interview</button>
+			</div>
+			<div class="col-sm-3 column"></div>
+		</div>
+
+		<div class="row clearfix">
+			<!-- alert box -->
+			<!-- <div class="col-sm-offset-1 col-sm-9 column" ng-show="instructions"> -->
+			<div class="col-sm-2 col-md-3 column" ng-show="instructions"></div>
+			<div class="col-sm-8 col-md-6 column" ng-show="instructions">
+				<div class="alert alert-success">
+					<div class="text-center">
+						<h4>Instructions:</h4>
+						<span id="facetime-small" class="glyphicon glyphicon-facetime-video"></span>
+					</div>
+					<div class="text-center">
+						<strong>Question {{questionSelectedIndex}}</strong> is about to begin.
+						<br/>Try to keep your answers short, ideally to less than 1 minute.
+						<br/>Notifications will be given every 30 seconds.
+						<br/><br/>Good Luck!<br/><br/>
+					</div>
+					<div class="text-center">
+						<button type="button" class="btn btn-danger"
+							ng-click="returnToInterview();">Cancel</button>
+						<button type="button" class="btn btn-success"
+							ng-click="goToQuestion();">Begin</button>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-2 col-md-3 column" ng-show="instructions"></div>
+		</div>
+
+
+
+		<div class="row clearfix">
+			<div class="col-sm-3 column">
+				<ul class="list-group question-blocks"
+					ng-repeat="question in questions" ng-hide="instructions">
+					<li class="list-group-item list-group-item-info">Question {{$index +1}}</li>
+
+					<li class="list-group-item list-group-item-link"
+						ng-class="{'list-group-item-success': hasResponses(question)}"
+						ng-click="goToQuestionOrResponse(question, $index);">
+						{{getResponseStatus(question)}}</li>
+
+					<li class="list-group-item"
+						ng-class="{'list-group-item-success': hasReviews(question)}"
+						ng-class="{'list-group-item-link': hasReviews(question)}"
+						ng-click="goToReview(question);">
+						{{getReviewStatus(question)}}</li>
+				</ul>
+			</div>
+
+			<div class="col-sm-8 col-md-7 column">
+
+	      <!--  View yourself -->
+	      <div id="box1" ng-show="!startInterview && !instructions">
+
+					<div id="previewBox" ng-show="displayPreview">
+						<!-- Intended to show a preview of yourself so that you can see
+						     what you look like before the interview. -->
+						<video id="video-preview"></video>
+						<span id="userAlert">
+							<p>Camera and mic check. We're not recording yet.
+							<br/>You will see yourself once connected.</p>
+						</span>
+					</div>
+
+				</div>
+
+	    </div>
+			<div class="col-sm-2 col-md-3 column"></div>
+
+	  </div>
+
+</div>
+<div ng-include="'components/footer/footer.html'"></div>

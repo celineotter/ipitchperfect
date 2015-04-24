@@ -3,7 +3,7 @@
 angular.module('pitchPerfectApp')
   .controller('NavbarCtrl', function ($scope, $location, Auth) {
     $scope.menu = [{
-      'title': 'Home',
+      'title': 'Welcome',
       'link': '/'
     }];
 
